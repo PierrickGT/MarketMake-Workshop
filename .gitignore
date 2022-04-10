@@ -1,0 +1,6 @@
+.envrc
+
+artifacts
+cache
+deployments/localhost
+node_modules

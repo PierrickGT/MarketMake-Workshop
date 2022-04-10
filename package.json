@@ -1,0 +1,38 @@
+{
+  "name": "marketmake-workshop",
+  "version": "1.0.0",
+  "description": "Contains source code for the MarketMake workshop.",
+  "main": "index.js",
+  "scripts": {
+    "compile": "mkdir -p abis && hardhat --show-stack-traces --max-memory 8192 compile",
+    "format": "prettier --config .prettierrc --write \"**/*.{ts,js}\" \"contracts/**/*.sol\"",
+    "format:file": "prettier --config .prettierrc --write",
+    "start-fork": "FORK_ENABLED=true hardhat node --no-reset --no-deploy",
+    "run-fork": "wait-on tcp:8545 && hardhat --network localhost fork:arbitrage",
+    "arbitrage-fork": "npm-run-all -p -r start-fork run-fork"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PierrickGT/MarketMake-Workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PierrickGT/MarketMake-Workshop/issues"
+  },
+  "homepage": "https://github.com/PierrickGT/MarketMake-Workshop#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@0.3.0-beta.13",
+    "chalk": "4.1.2",
+    "ethers": "5.6.2",
+    "hardhat": "2.9.3",
+    "hardhat-deploy": "0.11.4",
+    "hardhat-deploy-ethers": "0.3.0-beta.13",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.6.2",
+    "prettier-plugin-solidity": "1.0.0-beta.19",
+    "ts-node": "10.7.0",
+    "typescript": "4.6.3",
+    "wait-on": "6.0.1"
+  }
+}
